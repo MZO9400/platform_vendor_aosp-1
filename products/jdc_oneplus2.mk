@@ -12,18 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq (jdc_jflte,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/jdc_jflte.mk
-endif
+# Inherit AOSP device configuration for oneplus2
+$(call inherit-product, device/oneplus/oneplus2/aosp_oneplus2.mk)
 
-ifeq (jdc_gemini,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/jdc_gemini.mk
-endif
-
-ifeq (jdc_h850,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/jdc_h850.mk
-endif
-ifeq (jdc_oneplus2,$(TARGET_PRODUCT))
-    PRODUCT_MAKEFILES += $(LOCAL_DIR)/jdc_oneplus2.mk
-endif
+# Set those variables here to overwrite the inherited values.
+PRODUCT_NAME := jdc_oneplus2
+PRODUCT_DEVICE := oneplus2
+PRODUCT_BRAND := oneplus
+PRODUCT_MANUFACTURER := OnePlus
+PRODUCT_MODEL := OnePlus 2
 
